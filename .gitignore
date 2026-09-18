@@ -1,3 +1,6 @@
 .env
 *.gguf
 /ollama_data
+/webui_data
+.venv
+__pycache__/
