@@ -11,6 +11,7 @@ class ChatSession:
         self.history: list[dict] = []
 
     def send(self, user_input: str) -> str:
+        """Send one user message, print the streamed reply, and record both."""
         self.history.append({"role": "user", "content": user_input})
 
         reply = ""
@@ -23,6 +24,7 @@ class ChatSession:
         return reply
 
     def run(self):
+        """Run the terminal chat loop until the user types exit/quit."""
         print(f"Chatting with {self.client.model}. Type 'exit' to quit.\n")
         while True:
             user_input = input("You: ")

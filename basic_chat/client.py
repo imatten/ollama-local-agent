@@ -17,6 +17,7 @@ class OllamaClient:
             self.chat_url,
             json={"model": self.model, "messages": messages, "stream": True},
             stream=True,
+            timeout=300,
         )
         response.raise_for_status()
 
